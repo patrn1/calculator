@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Vladimir Samoylov">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="css/calculator.css">
+</head>
+<body>
+    <div class="controls">
+        <div id="multiply-btn" class="button">
+            <input type="button"
+                value="Умножить матрицы"
+                class="button__input">
+            <div class="button__angle"></div>
+        </div>
+        <div id="clear-btn" class="button">
+            <span class='button__icon'></span>
+            <input type="button"
+                value="Очистить матрицы"
+                class="button__input">
+        </div>
+        <div id="swap-btn" class="button">
+            <span class='button__icon'></span>
+            <input type="button"
+                value="Поменять матрицы местами"
+                class="button__input">
+        </div>
+        <div class="radio-group">
+            <div id="radio-btn-1" class="radio-button">
+                <input type="radio" name="matrices-radio" id="matrix-a" checked>
+                <label for="matrix-a" class="radio-button__label">
+                    <div class="radio-button__circle"></div>
+                    <span class="radio-btn__text">Матрица A</span>
+                </label>
+            </div>
+            <div id="radio-btn-2" class="radio-button">
+                <input type="radio" name="matrices-radio" id="matrix-b">
+                <label for="matrix-b" class="radio-button__label">
+                    <div class="radio-button__circle"></div>
+                    <span class="radio-btn__text">Матрица B</span>
+                </label>
+            </div>
+        </div>
+        <div class="button-group button-group_row">
+            <div id="add-row-btn" class="button button_add">
+                <span class='button__icon'></span>
+                <input type="button"
+                    value="Добавить"
+                    class="button__input">
+            </div>
+            <div id="remove-row-btn" class="button button_remove">
+                <span class='button__icon'></span>
+                <input type="button"
+                    value="Удалить"
+                    class="button__input">
+            </div>
+            <span class="button-group__text">строку</span>
+        </div>
+        <div class="button-group button-group_column">
+            <div id="add-column-btn" class="button button_add">
+                <span class='button__icon'></span>
+                <input type="button"
+                    value="Добавить"
+                    class="button__input">
+            </div>
+            <div id="remove-column-btn" class="button button_remove">
+                <span class='button__icon'></span>
+                <input type="button"
+                    value="Удалить"
+                    class="button__input">
+            </div>
+            <span class="button-group__text">столбец</span>
+        </div>
+        <div class="warning wrong-size-warning">
+            Такие матрицы нельзя перемножить, так-как количество столбцов матрицы A
+            не равно количеству строк матрицы B.
+        </div>
+        <div class="warning wrong-value-warning">
+            Неверное значение ячейки матрицы.
+            Значениями могут быть лишь целые и дробные числа от -10 до 10.
+        </div>
+        <div class="warning missing-values-warning">
+            Введите значения во все ячейки матриц.
+        </div>
+    </div>
+    <div class="matrices-form">
+        <div class="result-matrix">
+            <div class="left-bracket"></div>
+            <div class="matrix__rows">
+                <div><input type="text" class="matrix__cell" placeholder="c1,1" disabled></div>
+            </div>
+            <div class="right-bracket"></div>
+        </div>
+        <div class="matrix1-container">
+            <div class="matrix1">
+                <div class="left-bracket"></div>
+                <div class="matrix__rows">
+                    <div><input type="text" class="matrix__cell" placeholder="a1,1"></div>
+                </div>
+                <div class="right-bracket"></div>
+                <div class="matrix-name-container">
+                    <div class="matrix-name">A</div>
+                </div>
+            </div>
+        </div>
+        <div class="matrix2-container">
+            <div class="matrix2">
+                <div class="left-bracket"></div>
+                <div class="matrix__rows">
+                    <div><input type="text" class="matrix__cell" placeholder="b1,1"></div>
+                </div>
+                <div class="right-bracket"></div>
+                <div class="matrix-name-container">
+                    <div class="matrix-name">B</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg width="10" height="210" class="bracket_disabled">
+        <line x1="1" y1="1" x2="10" y2="1" stroke="black" stroke-width="2"/>
+        <line x1="1" y1="1" x2="1" y2="0" stroke="black" stroke-width="2"/>
+        <line x1="1" y1="0" x2="10" y2="0" stroke="black" stroke-width="2"/>
+    </svg>
+    <script type="text/javascript" src="js/calculator.js"></script>
+</body>
+</html>
